@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PocketHabit: Habit Tracker</title>
+<meta name="description" content="Build lasting habits – a habit tracker with streak protection & no subscription.">
+<style>
+  :root { color-scheme: dark; --bg: #0c3b45; --card: #195255; --fg: #ffffff; --muted: #b7d3d3; --accent: #67e4b8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  nav button { font: inherit; font-size: 0.8125rem; line-height: 1; padding: 7px 11px; border-radius: 999px; cursor: pointer;
+               border: 1px solid rgba(103, 228, 184, 0.45); background: transparent; color: var(--fg); }
+  nav button:hover { background: var(--card); }
+  nav button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 700; }
+  nav button:focus-visible, .store:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .hero { display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35); }
+  p.lead { margin: 24px 0 8px; color: var(--muted); font-size: 1.0625rem; }
+  .store { display: inline-block; margin: 16px 0 8px; padding: 12px 22px; border-radius: 999px; background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 700; }
+  .store:hover { filter: brightness(1.08); }
+  section { margin-top: 28px; padding: 16px 20px; border-radius: 12px; background: var(--card); }
+  h2 { margin: 0 0 6px; font-size: 1rem; }
+  ul { margin: 0; padding-left: 20px; }
+  a { color: var(--accent); }
+  footer { margin-top: 32px; font-size: 0.875rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <nav id="langs" aria-label="Language"></nav>
+
+  <img id="hero" class="hero" src="feature-en.png" width="1024" height="500"
+       alt="PocketHabit – Build lasting habits – a habit tracker with streak protection &amp; no subscription.">
+
+  <p id="lead" class="lead">Build lasting habits – a habit tracker with streak protection &amp; no subscription.</p>
+  <a class="store" href="https://play.google.com/store/apps/details?id=com.drdml.pockethabit">Google Play</a>
+
+  <section>
+    <h2 id="info">Info</h2>
+    <ul>
+      <li><a id="privacy" href="https://sites.google.com/view/datenschutzpockethabit/english-en">Privacy policy</a></li>
+      <li><a id="imprint" href="https://sites.google.com/view/datenschutzpockethabit/impressum">Imprint</a></li>
+      <li><span id="contact">Contact</span>: <a href="mailto:drdml-info@gmx.de">drdml-info@gmx.de</a></li>
+    </ul>
+  </section>
+
+  <footer>© 2026 drdmlbusiness</footer>
+</main>
+
+<script>
+  // Texte: Titel und Kurzbeschreibung aus dem Store-Eintrag, „Info“, Datenschutz und
+  // Impressum aus der App (strings.xml). Datenschutzerklärung gibt es auf Deutsch und Englisch.
+  var PRIVACY_DE = "https://sites.google.com/view/datenschutzpockethabit/deutsch-de";
+  var PRIVACY_EN = "https://sites.google.com/view/datenschutzpockethabit/english-en";
+  var T = {
+    de: { name: "Deutsch", title: "PocketHabit: Habit Tracker",
+          lead: "Baue Gewohnheiten auf, die bleiben – Habit-Tracker mit Streak-Schutz, ohne Abo.",
+          info: "Info", privacy: "Datenschutzerklärung", imprint: "Impressum", contact: "Kontakt" },
+    en: { name: "English", title: "PocketHabit: Habit Tracker",
+          lead: "Build lasting habits – a habit tracker with streak protection & no subscription.",
+          info: "Info", privacy: "Privacy policy", imprint: "Imprint", contact: "Contact" },
+    es: { name: "Español", title: "PocketHabit: Hábitos y rutinas",
+          lead: "Tracker de hábitos con protección de racha: hábitos duraderos y sin suscripción.",
+          info: "Información", privacy: "Política de privacidad", imprint: "Aviso legal", contact: "Contacto" },
+    fr: { name: "Français", title: "PocketHabit: Suivi d'habitudes",
+          lead: "Suivi d'habitudes avec protection de série – souple et sans abonnement.",
+          info: "Informations", privacy: "Politique de confidentialité", imprint: "Mentions légales", contact: "Contact" },
+    id: { name: "Bahasa Indonesia", title: "PocketHabit: Pelacak Kebiasaan",
+          lead: "Pelacak kebiasaan dengan perlindungan streak – fleksibel & tanpa langganan.",
+          info: "Info", privacy: "Kebijakan privasi", imprint: "Informasi hukum", contact: "Kontak" },
+    it: { name: "Italiano", title: "PocketHabit: Tracker abitudini",
+          lead: "Tracker di abitudini con protezione serie, flessibile e senza abbonamento.",
+          info: "Informazioni", privacy: "Informativa sulla privacy", imprint: "Note legali", contact: "Contatti" },
+    ja: { name: "日本語", title: "PocketHabit: 習慣トラッカー",
+          lead: "長続きする習慣づくりを – ストリーク保護付きの習慣トラッカー。サブスクなし。",
+          info: "情報", privacy: "プライバシーポリシー", imprint: "運営情報", contact: "お問い合わせ" },
+    pl: { name: "Polski", title: "PocketHabit: Tracker nawyków",
+          lead: "Tracker nawyków z ochroną serii: trwałe nawyki, elastycznie i bez subskrypcji.",
+          info: "Informacje", privacy: "Polityka prywatności", imprint: "Nota prawna", contact: "Kontakt" },
+    pt: { name: "Português (Brasil)", title: "PocketHabit: Hábitos e rotinas",
+          lead: "Rastreador de hábitos com proteção de sequência, flexível e sem assinatura.",
+          info: "Informações", privacy: "Política de privacidade", imprint: "Aviso legal", contact: "Contato" },
+    ru: { name: "Русский", title: "PocketHabit: Трекер привычек",
+          lead: "Трекер привычек с защитой серии: устойчивые привычки, гибко и без подписки.",
+          info: "Информация", privacy: "Политика конфиденциальности", imprint: "Выходные данные", contact: "Контакты" }
+  };
+  var ORDER = ["de", "en", "es", "fr", "id", "it", "ja", "pl", "pt", "ru"];
+  var HTML_LANG = { pt: "pt-BR" };
+
+  function setLang(code, remember) {
+    var t = T[code];
+    document.documentElement.lang = HTML_LANG[code] || code;
+    document.title = t.title;
+    document.querySelector('meta[name="description"]').setAttribute("content", t.lead);
+    var hero = document.getElementById("hero");
+    hero.src = "feature-" + code + ".png";
+    hero.alt = "PocketHabit – " + t.lead;
+    document.getElementById("lead").textContent = t.lead;
+    document.getElementById("info").textContent = t.info;
+    var privacy = document.getElementById("privacy");
+    privacy.textContent = t.privacy;
+    privacy.href = code === "de" ? PRIVACY_DE : PRIVACY_EN;
+    document.getElementById("imprint").textContent = t.imprint;
+    document.getElementById("contact").textContent = t.contact;
+    var buttons = document.querySelectorAll("#langs button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute("aria-pressed", buttons[i].getAttribute("data-lang") === code ? "true" : "false");
+    }
+    if (remember) {
+      try { localStorage.setItem("lang", code); } catch (e) {}
+    }
+  }
+
+  function initialLang() {
+    var m = /[?&]lang=([a-z]{2})/.exec(location.search);
+    if (m && T[m[1]]) return m[1];
+    try { var saved = localStorage.getItem("lang"); if (saved && T[saved]) return saved; } catch (e) {}
+    var wanted = navigator.languages || [navigator.language || "en"];
+    for (var i = 0; i < wanted.length; i++) {
+      var c = String(wanted[i]).toLowerCase().slice(0, 2);
+      if (c === "in") c = "id";
+      if (T[c]) return c;
+    }
+    return "en";
+  }
+
+  var nav = document.getElementById("langs");
+  ORDER.forEach(function (code) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.textContent = T[code].name;
+    b.lang = HTML_LANG[code] || code;
+    b.setAttribute("data-lang", code);
+    b.addEventListener("click", function () { setLang(code, true); });
+    nav.appendChild(b);
+  });
+  setLang(initialLang(), false);
+</script>
+</body>
+</html>
