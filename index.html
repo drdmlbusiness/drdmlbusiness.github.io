@@ -4,139 +4,196 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PocketHabit: Habit Tracker</title>
-<meta name="description" content="Build lasting habits – a habit tracker with streak protection & no subscription.">
-<style>
-  :root { color-scheme: dark; --bg: #0c3b45; --card: #195255; --fg: #ffffff; --muted: #b7d3d3; --accent: #67e4b8; }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
-  nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
-  nav button { font: inherit; font-size: 0.8125rem; line-height: 1; padding: 7px 11px; border-radius: 999px; cursor: pointer;
-               border: 1px solid rgba(103, 228, 184, 0.45); background: transparent; color: var(--fg); }
-  nav button:hover { background: var(--card); }
-  nav button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 700; }
-  nav button:focus-visible, .store:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .hero { display: block; width: 100%; height: auto; border-radius: 16px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35); }
-  p.lead { margin: 24px 0 8px; color: var(--muted); font-size: 1.0625rem; }
-  .store { display: inline-block; margin: 16px 0 8px; padding: 12px 22px; border-radius: 999px; background: var(--accent); color: var(--bg); text-decoration: none; font-weight: 700; }
-  .store:hover { filter: brightness(1.08); }
-  section { margin-top: 28px; padding: 16px 20px; border-radius: 12px; background: var(--card); }
-  h2 { margin: 0 0 6px; font-size: 1rem; }
-  ul { margin: 0; padding-left: 20px; }
-  a { color: var(--accent); }
-  footer { margin-top: 32px; font-size: 0.875rem; color: var(--muted); }
-</style>
+<meta name="description" content="Build lasting habits – a habit tracker with streak protection &amp; no subscription.">
+<link rel="canonical" href="https://drdmlbusiness.github.io/">
+<link rel="alternate" hreflang="de" href="https://drdmlbusiness.github.io/de/">
+<link rel="alternate" hreflang="en" href="https://drdmlbusiness.github.io/">
+<link rel="alternate" hreflang="es" href="https://drdmlbusiness.github.io/es/">
+<link rel="alternate" hreflang="fr" href="https://drdmlbusiness.github.io/fr/">
+<link rel="alternate" hreflang="id" href="https://drdmlbusiness.github.io/id/">
+<link rel="alternate" hreflang="it" href="https://drdmlbusiness.github.io/it/">
+<link rel="alternate" hreflang="ja" href="https://drdmlbusiness.github.io/ja/">
+<link rel="alternate" hreflang="pl" href="https://drdmlbusiness.github.io/pl/">
+<link rel="alternate" hreflang="pt-BR" href="https://drdmlbusiness.github.io/pt/">
+<link rel="alternate" hreflang="ru" href="https://drdmlbusiness.github.io/ru/">
+<link rel="alternate" hreflang="x-default" href="https://drdmlbusiness.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PocketHabit">
+<meta property="og:title" content="PocketHabit: Habit Tracker">
+<meta property="og:description" content="Build lasting habits – a habit tracker with streak protection &amp; no subscription.">
+<meta property="og:url" content="https://drdmlbusiness.github.io/">
+<meta property="og:image" content="https://drdmlbusiness.github.io/feature-en.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "PocketHabit",
+  "alternateName": "PocketHabit: Habit Tracker",
+  "description": "Build lasting habits – a habit tracker with streak protection & no subscription.",
+  "inLanguage": "en",
+  "url": "https://drdmlbusiness.github.io/",
+  "image": "https://drdmlbusiness.github.io/feature-en.png",
+  "operatingSystem": "Android",
+  "applicationCategory": "HealthApplication",
+  "installUrl": "https://play.google.com/store/apps/details?id=com.drdml.pockethabit",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "drdmlbusiness",
+    "url": "https://drdmlbusiness.github.io/"
+  }
+}
+</script>
 </head>
 <body>
 <main>
-  <nav id="langs" aria-label="Language"></nav>
+  <nav aria-label="Language">
+    <a href="de/" hreflang="de" lang="de">Deutsch</a>
+    <a href="./" hreflang="en" lang="en" aria-current="page">English</a>
+    <a href="es/" hreflang="es" lang="es">Español</a>
+    <a href="fr/" hreflang="fr" lang="fr">Français</a>
+    <a href="id/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <a href="it/" hreflang="it" lang="it">Italiano</a>
+    <a href="ja/" hreflang="ja" lang="ja">日本語</a>
+    <a href="pl/" hreflang="pl" lang="pl">Polski</a>
+    <a href="pt/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a>
+    <a href="ru/" hreflang="ru" lang="ru">Русский</a>
+  </nav>
 
-  <img id="hero" class="hero" src="feature-en.png" width="1024" height="500"
+  <img class="hero" src="feature-en.png" width="1024" height="500"
        alt="PocketHabit – Build lasting habits – a habit tracker with streak protection &amp; no subscription.">
 
-  <p id="lead" class="lead">Build lasting habits – a habit tracker with streak protection &amp; no subscription.</p>
-  <a class="store" href="https://play.google.com/store/apps/details?id=com.drdml.pockethabit">Google Play</a>
+  <h1>PocketHabit: Habit Tracker</h1>
+  <p class="lead">Build lasting habits – a habit tracker with streak protection &amp; no subscription.</p>
+  <a class="store" href="https://play.google.com/store/apps/details?id=com.drdml.pockethabit&amp;hl=en&amp;utm_source=website&amp;utm_campaign=site_en">Google Play</a>
 
+  <div class="intro">
+    <p>Want to build better habits – but life keeps getting in the way? PocketHabit is the habit tracker that gives you room to be human.</p>
+  </div>
   <section>
-    <h2 id="info">Info</h2>
+    <h2>BUILT FOR BEGINNERS</h2>
+    <p>No complicated setup. No account. No subscription. Just open the app, add your first habit, and get started. A quick onboarding gets you up and running in under a minute.</p>
+  </section>
+  <section>
+    <h2>HOW IT WORKS</h2>
     <ul>
-      <li><a id="privacy" href="https://sites.google.com/view/datenschutzpockethabit/english-en">Privacy policy</a></li>
-      <li><a id="imprint" href="https://sites.google.com/view/datenschutzpockethabit/impressum">Imprint</a></li>
-      <li><span id="contact">Contact</span>: <a href="mailto:drdml-info@gmx.de">drdml-info@gmx.de</a></li>
+      <li>Choose your first habits – or pick from ready-made suggestions during onboarding</li>
+      <li>Check them off with a single tap</li>
+      <li>Watch your streak grow – streak protection catches the days that don&#x27;t go to plan</li>
+    </ul>
+  </section>
+  <section>
+    <h2>NOBODY IS PERFECT</h2>
+    <p>PocketHabit&#x27;s unique streak protection understands that real change takes time. If you miss a day, your streak doesn&#x27;t instantly break – you have a buffer that helps you get back on track. You decide how strict you want to be:</p>
+    <ul>
+      <li>Beginner: 2 missed days per week allowed</li>
+      <li>Easy: 1 missed day per week</li>
+      <li>Normal: 1 missed day every 14 days</li>
+      <li>Hard: 1 missed day per month</li>
+    </ul>
+    <p>Grow at your own pace – and when you&#x27;re ready, level up the difficulty.</p>
+  </section>
+  <section>
+    <h2>ALL YOUR HABITS, ONE APP</h2>
+    <p>Whether it&#x27;s daily routines, weekly tasks, or monthly goals – PocketHabit handles it all:</p>
+    <ul>
+      <li>Daily: Morning routine, exercise, drinking water</li>
+      <li>Weekly: Choose specific weekdays</li>
+      <li>Monthly: A fixed date or e.g. &quot;every 2nd Monday of the month&quot;</li>
+    </ul>
+  </section>
+  <section>
+    <h2>REMINDERS THAT WORK FOR YOU</h2>
+    <p>Instead of setting a separate reminder for every habit, activate one global daily reminder. Open the app, check everything off at once. That&#x27;s how simple a routine can be. Prefer individual times? Every habit can also get its own reminder.</p>
+  </section>
+  <section>
+    <h2>YOUR APP, YOUR LOOK</h2>
+    <p>Choose from multiple color themes and switch between Dark and Light Mode. An app you actually enjoy opening every day helps you stay consistent.</p>
+  </section>
+  <section>
+    <h2>STATS THAT MOTIVATE</h2>
+    <p>See at a glance how you&#x27;ve done this week and this month. The detail view shows a heatmap of your completions, completion rate, and your personal best streak.</p>
+    <ul>
+      <li>Monthly calendar: every day colored by how much you got done</li>
+      <li>Weekday overview: see which days work best for you</li>
+      <li>Completion rates for the last 7, 30 and 90 days</li>
+    </ul>
+  </section>
+  <section>
+    <h2>MILESTONES THAT KEEP YOU GOING</h2>
+    <p>30 achievements reward your progress: your first 7-day streak, perfect weeks and months, and even your comeback after a break.</p>
+  </section>
+  <section>
+    <h2>A DAILY DOSE OF MOTIVATION</h2>
+    <p>Each day starts with a fresh page from your tear-off calendar – one of 240 short quotes to help you keep going.</p>
+  </section>
+  <section>
+    <h2>YOUR DATA, UNDER YOUR CONTROL</h2>
+    <ul>
+      <li>Export your habits as a backup file and restore them on a new phone</li>
+      <li>Pause habits in the archive – their statistics are kept</li>
+    </ul>
+  </section>
+  <section>
+    <h2>WHO IS THIS HABIT TRACKER FOR?</h2>
+    <p>For anyone who wants a simple habit tracker to start small and stay consistent – whether it&#x27;s drinking more water, reading every evening, working out three times a week, or keeping your home tidy. Especially if strict habit apps have ever made you give up after a single missed day.</p>
+  </section>
+  <section>
+    <h2>PREMIUM: PAY ONCE, BENEFIT FOREVER</h2>
+    <p>No subscription. No monthly fees. Upgrade once and enjoy forever:</p>
+    <ul>
+      <li>Completely ad-free</li>
+      <li>Access to all themes</li>
+      <li>Statistics history over 2 years (instead of 6 months)</li>
+      <li>Streak protection without watching ads</li>
+      <li>All future premium features included</li>
+    </ul>
+  </section>
+  <section>
+    <h2>BUILT WITH USERS, FOR USERS</h2>
+    <p>PocketHabit grows with you. New features are only developed when real users genuinely want them. Your feedback matters – reach out and help make the app better.</p>
+    <p>Privacy: All your habit data stays on your device. No account required.</p>
+    <p>Download now and take the first step toward the best version of yourself.</p>
+  </section>
+
+  <p class="cta"><a class="store" href="https://play.google.com/store/apps/details?id=com.drdml.pockethabit&amp;hl=en&amp;utm_source=website&amp;utm_campaign=site_en">Google Play</a></p>
+
+  <section class="info">
+    <h2>Info</h2>
+    <ul>
+      <li><a href="https://sites.google.com/view/datenschutzpockethabit/english-en">Privacy policy</a></li>
+      <li><a href="https://sites.google.com/view/datenschutzpockethabit/impressum">Imprint</a></li>
+      <li>Contact: <a href="mailto:drdml-info@gmx.de">drdml-info@gmx.de</a></li>
     </ul>
   </section>
 
   <footer>© 2026 drdmlbusiness</footer>
 </main>
-
 <script>
-  // Texte: Titel und Kurzbeschreibung aus dem Store-Eintrag, „Info“, Datenschutz und
-  // Impressum aus der App (strings.xml). Datenschutzerklärung gibt es auf Deutsch und Englisch.
-  var PRIVACY_DE = "https://sites.google.com/view/datenschutzpockethabit/deutsch-de";
-  var PRIVACY_EN = "https://sites.google.com/view/datenschutzpockethabit/english-en";
-  var T = {
-    de: { name: "Deutsch", title: "PocketHabit: Habit Tracker",
-          lead: "Baue Gewohnheiten auf, die bleiben – Habit-Tracker mit Streak-Schutz, ohne Abo.",
-          info: "Info", privacy: "Datenschutzerklärung", imprint: "Impressum", contact: "Kontakt" },
-    en: { name: "English", title: "PocketHabit: Habit Tracker",
-          lead: "Build lasting habits – a habit tracker with streak protection & no subscription.",
-          info: "Info", privacy: "Privacy policy", imprint: "Imprint", contact: "Contact" },
-    es: { name: "Español", title: "PocketHabit: Hábitos y rutinas",
-          lead: "Tracker de hábitos con protección de racha: hábitos duraderos y sin suscripción.",
-          info: "Información", privacy: "Política de privacidad", imprint: "Aviso legal", contact: "Contacto" },
-    fr: { name: "Français", title: "PocketHabit: Suivi d'habitudes",
-          lead: "Suivi d'habitudes avec protection de série – souple et sans abonnement.",
-          info: "Informations", privacy: "Politique de confidentialité", imprint: "Mentions légales", contact: "Contact" },
-    id: { name: "Bahasa Indonesia", title: "PocketHabit: Pelacak Kebiasaan",
-          lead: "Pelacak kebiasaan dengan perlindungan streak – fleksibel & tanpa langganan.",
-          info: "Info", privacy: "Kebijakan privasi", imprint: "Informasi hukum", contact: "Kontak" },
-    it: { name: "Italiano", title: "PocketHabit: Tracker abitudini",
-          lead: "Tracker di abitudini con protezione serie, flessibile e senza abbonamento.",
-          info: "Informazioni", privacy: "Informativa sulla privacy", imprint: "Note legali", contact: "Contatti" },
-    ja: { name: "日本語", title: "PocketHabit: 習慣トラッカー",
-          lead: "長続きする習慣づくりを – ストリーク保護付きの習慣トラッカー。サブスクなし。",
-          info: "情報", privacy: "プライバシーポリシー", imprint: "運営情報", contact: "お問い合わせ" },
-    pl: { name: "Polski", title: "PocketHabit: Tracker nawyków",
-          lead: "Tracker nawyków z ochroną serii: trwałe nawyki, elastycznie i bez subskrypcji.",
-          info: "Informacje", privacy: "Polityka prywatności", imprint: "Nota prawna", contact: "Kontakt" },
-    pt: { name: "Português (Brasil)", title: "PocketHabit: Hábitos e rotinas",
-          lead: "Rastreador de hábitos com proteção de sequência, flexível e sem assinatura.",
-          info: "Informações", privacy: "Política de privacidade", imprint: "Aviso legal", contact: "Contato" },
-    ru: { name: "Русский", title: "PocketHabit: Трекер привычек",
-          lead: "Трекер привычек с защитой серии: устойчивые привычки, гибко и без подписки.",
-          info: "Информация", privacy: "Политика конфиденциальности", imprint: "Выходные данные", contact: "Контакты" }
-  };
-  var ORDER = ["de", "en", "es", "fr", "id", "it", "ja", "pl", "pt", "ru"];
-  var HTML_LANG = { pt: "pt-BR" };
-
-  function setLang(code, remember) {
-    var t = T[code];
-    document.documentElement.lang = HTML_LANG[code] || code;
-    document.title = t.title;
-    document.querySelector('meta[name="description"]').setAttribute("content", t.lead);
-    var hero = document.getElementById("hero");
-    hero.src = "feature-" + code + ".png";
-    hero.alt = "PocketHabit – " + t.lead;
-    document.getElementById("lead").textContent = t.lead;
-    document.getElementById("info").textContent = t.info;
-    var privacy = document.getElementById("privacy");
-    privacy.textContent = t.privacy;
-    privacy.href = code === "de" ? PRIVACY_DE : PRIVACY_EN;
-    document.getElementById("imprint").textContent = t.imprint;
-    document.getElementById("contact").textContent = t.contact;
-    var buttons = document.querySelectorAll("#langs button");
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].setAttribute("aria-pressed", buttons[i].getAttribute("data-lang") === code ? "true" : "false");
-    }
-    if (remember) {
-      try { localStorage.setItem("lang", code); } catch (e) {}
-    }
-  }
-
-  function initialLang() {
+  (function () {
     var m = /[?&]lang=([a-z]{2})/.exec(location.search);
-    if (m && T[m[1]]) return m[1];
-    try { var saved = localStorage.getItem("lang"); if (saved && T[saved]) return saved; } catch (e) {}
-    var wanted = navigator.languages || [navigator.language || "en"];
-    for (var i = 0; i < wanted.length; i++) {
-      var c = String(wanted[i]).toLowerCase().slice(0, 2);
-      if (c === "in") c = "id";
-      if (T[c]) return c;
-    }
-    return "en";
-  }
-
-  var nav = document.getElementById("langs");
-  ORDER.forEach(function (code) {
-    var b = document.createElement("button");
-    b.type = "button";
-    b.textContent = T[code].name;
-    b.lang = HTML_LANG[code] || code;
-    b.setAttribute("data-lang", code);
-    b.addEventListener("click", function () { setLang(code, true); });
-    nav.appendChild(b);
-  });
-  setLang(initialLang(), false);
+    if (!m) return;
+    var c = m[1] === "in" ? "id" : m[1];
+    if (["de", "es", "fr", "id", "it", "ja", "pl", "pt", "ru"].indexOf(c) >= 0) location.replace(c + "/");
+  })();
 </script>
 </body>
 </html>
