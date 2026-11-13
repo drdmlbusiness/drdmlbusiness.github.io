@@ -15,6 +15,8 @@ p.lead { margin: 0 0 8px; color: var(--muted); font-size: 1.0625rem; }
 .store:hover { filter: brightness(1.08); }
 .intro { margin-top: 20px; }
 .intro p { margin: 0 0 8px; }
+.outro { margin-top: 20px; }
+.outro p { margin: 0 0 8px; }
 section { margin-top: 20px; padding: 16px 20px; border-radius: 12px; background: var(--card); }
 section p { margin: 0 0 8px; }
 section p:last-child, section ul:last-child { margin-bottom: 0; }
